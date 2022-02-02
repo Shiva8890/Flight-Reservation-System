@@ -1,13 +1,16 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 public class TouristTicket extends Ticket {
 
      private String hotelAddress;
-     private String selectedTouristLocation;
+     String[] selectedTouristLocation = new String[5];
      Flight flight;
 
 //  getter and setter
        public String getHotelAddress(){return hotelAddress;} public void setHotelAddress(String hotelAddress) {this.hotelAddress = hotelAddress;}
 
-       public String getSelectedTouristLocation() {return selectedTouristLocation;} public void setSelectedTouristLocation(String selectedTouristLocation) {this.selectedTouristLocation = selectedTouristLocation;}
+       public String getSelectedTouristLocation() {return Arrays.toString(selectedTouristLocation);}
 
 //  Constructor
   TouristTicket(String pnr,String from,String to,String departureDateTime,String arrivalDateTime,String seatNo,float price, boolean cancelled , Flight flight, Passenger passenger ){
@@ -19,7 +22,7 @@ public class TouristTicket extends Ticket {
 
 //   Methods
      public String getTouristLocation(){
-        return selectedTouristLocation;
+        return Arrays.toString(selectedTouristLocation);
      }
      public void removeTouristLocation(String location){
               List<String> myList = new ArrayList<>(Arrays.asList(selectedTouristLocation));
@@ -27,7 +30,7 @@ public class TouristTicket extends Ticket {
               selectedTouristLocation = myList.toArray(new String[0]);
      }
      public void addTouristLocation(String location){
-           List<String> myList = new arrayList<>(Arrays.asList(selectedTouristLocation));
+           List<String> myList = new ArrayList<>(Arrays.asList(selectedTouristLocation));
            myList.add(location);
          selectedTouristLocation = myList.toArray(new String[0]);
 

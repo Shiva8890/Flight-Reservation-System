@@ -33,7 +33,7 @@ public class Flight {
         return this.bookedSeats<300;
         }
         public void incrementBookingCounter(){
-           this.
+           bookedSeats++;
         }
 
 }
